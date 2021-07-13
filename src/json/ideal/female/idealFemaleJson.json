@@ -1,0 +1,130 @@
+[
+	{
+		"id": 0,
+		"filename": "000_idealFemale_이달의소녀_희진.jpg",
+		"url": "img/ideal/female/000_idealFemale_이달의소녀_희진.jpg",
+		"group": "이달의소녀",
+		"name": "희진",
+		"value": "이달의소녀 희진"
+	},
+	{
+		"id": 1,
+		"filename": "001_idealFemale_이달의소녀_현진.jpg",
+		"url": "img/ideal/female/001_idealFemale_이달의소녀_현진.jpg",
+		"group": "이달의소녀",
+		"name": "현진",
+		"value": "이달의소녀 현진"
+	},
+	{
+		"id": 2,
+		"filename": "002_idealFemale_이달의소녀_하슬.jpg",
+		"url": "img/ideal/female/002_idealFemale_이달의소녀_하슬.jpg",
+		"group": "이달의소녀",
+		"name": "하슬",
+		"value": "이달의소녀 하슬"
+	},
+	{
+		"id": 3,
+		"filename": "003_idealFemale_이달의소녀_여진.jpg",
+		"url": "img/ideal/female/003_idealFemale_이달의소녀_여진.jpg",
+		"group": "이달의소녀",
+		"name": "여진",
+		"value": "이달의소녀 여진"
+	},
+	{
+		"id": 4,
+		"filename": "004_idealFemale_이달의소녀_비비.jpg",
+		"url": "img/ideal/female/004_idealFemale_이달의소녀_비비.jpg",
+		"group": "이달의소녀",
+		"name": "비비",
+		"value": "이달의소녀 비비"
+	},
+	{
+		"id": 5,
+		"filename": "005_idealFemale_이달의소녀_김립.jpg",
+		"url": "img/ideal/female/005_idealFemale_이달의소녀_김립.jpg",
+		"group": "이달의소녀",
+		"name": "김립",
+		"value": "이달의소녀 김립"
+	},
+	{
+		"id": 6,
+		"filename": "006_idealFemale_이달의소녀_진솔.jpg",
+		"url": "img/ideal/female/006_idealFemale_이달의소녀_진솔.jpg",
+		"group": "이달의소녀",
+		"name": "진솔",
+		"value": "이달의소녀 진솔"
+	},
+	{
+		"id": 7,
+		"filename": "007_idealFemale_이달의소녀_최리.jpg",
+		"url": "img/ideal/female/007_idealFemale_이달의소녀_최리.jpg",
+		"group": "이달의소녀",
+		"name": "최리",
+		"value": "이달의소녀 최리"
+	},
+	{
+		"id": 8,
+		"filename": "008_idealFemale_이달의소녀_이브.jpg",
+		"url": "img/ideal/female/008_idealFemale_이달의소녀_이브.jpg",
+		"group": "이달의소녀",
+		"name": "이브",
+		"value": "이달의소녀 이브"
+	},
+	{
+		"id": 9,
+		"filename": "009_idealFemale_이달의소녀_츄.jpg",
+		"url": "img/ideal/female/009_idealFemale_이달의소녀_츄.jpg",
+		"group": "이달의소녀",
+		"name": "츄",
+		"value": "이달의소녀 츄"
+	},
+	{
+		"id": 10,
+		"filename": "010_idealFemale_이달의소녀_고원.jpg",
+		"url": "img/ideal/female/010_idealFemale_이달의소녀_고원.jpg",
+		"group": "이달의소녀",
+		"name": "고원",
+		"value": "이달의소녀 고원"
+	},
+	{
+		"id": 11,
+		"filename": "011_idealFemale_이달의소녀_올리비아-혜.jpg",
+		"url": "img/ideal/female/011_idealFemale_이달의소녀_올리비아-혜.jpg",
+		"group": "이달의소녀",
+		"name": "올리비아-혜",
+		"value": "이달의소녀 올리비아-혜"
+	},
+	{
+		"id": 12,
+		"filename": "012_idealFemale_블랙핑크_지수.jpg",
+		"url": "img/ideal/female/012_idealFemale_블랙핑크_지수.jpg",
+		"group": "블랙핑크",
+		"name": "지수",
+		"value": "블랙핑크 지수"
+	},
+	{
+		"id": 13,
+		"filename": "013_idealFemale_블랙핑크_제니.jpg",
+		"url": "img/ideal/female/013_idealFemale_블랙핑크_제니.jpg",
+		"group": "블랙핑크",
+		"name": "제니",
+		"value": "블랙핑크 제니"
+	},
+	{
+		"id": 14,
+		"filename": "014_idealFemale_블랙핑크_로제.jpg",
+		"url": "img/ideal/female/014_idealFemale_블랙핑크_로제.jpg",
+		"group": "블랙핑크",
+		"name": "로제",
+		"value": "블랙핑크 로제"
+	},
+	{
+		"id": 15,
+		"filename": "015_idealFemale_블랙핑크_리사.jpg",
+		"url": "img/ideal/female/015_idealFemale_블랙핑크_리사.jpg",
+		"group": "블랙핑크",
+		"name": "리사",
+		"value": "블랙핑크 리사"
+	}
+]
