@@ -1,6 +1,6 @@
 import React, { memo, useState, useEffect } from 'react';
 import styled, { keyframes, css } from 'styled-components';
-import { makeStyles, GridList, GridListTile, GridListTileBar } from '@material-ui/core';
+import { makeStyles, ImageList, ImageListItem, ImageListItemBar } from '@material-ui/core';
 import { Link } from 'react-router-dom';
 
 import Button from './Button';
@@ -107,14 +107,14 @@ const linkStyle = {
 }
 
 const useStyles = makeStyles((theme) => ({
-  gridRoot: {
+  root: {
     display: 'flex',
     flexWrap: 'wrap',
     justifyContent: 'space-around',
     overflow: 'hidden',
     backgroundColor: theme.palette.background.paper,
   },
-  gridList: {
+  imageList: {
     width: 500,
     height: 450,
   },
@@ -149,13 +149,13 @@ const Dialog = (props) => {
   return (
     <DarkBackground disappear={!visible}>
       <DialogBlock disappear={!visible}>
-      <div className={classes.gridRoot}>
-        <GridList cellHeight={180} className={classes.gridList}>
-          <GridListTile>
+      <div className={classes.root}>
+        <ImageList rowHeight={180} className={classes.imageList}>
+          <ImageListItem>
             <img src={img} alt={gameValue} />
-            <GridListTileBar title={gameValue} />
-          </GridListTile>
-        </GridList>
+            <ImageListItemBar title={gameValue} />
+          </ImageListItem>
+        </ImageList>
       </div>
         <SingleSelect options={options} onChange={onChange}></SingleSelect>
         <ButtonGroup>

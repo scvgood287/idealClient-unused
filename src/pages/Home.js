@@ -1,11 +1,11 @@
 import React, { useState, memo } from 'react';
 import { ThemeProvider } from 'styled-components';
 
-import t_idealMale from 'img/ideal/thumbnail/t_idealMale.jpg';
-import t_idealFemale from 'img/ideal/thumbnail/t_idealFemale.jpg';
-import t_idealFood from 'img/ideal/thumbnail/t_idealFood.jpg';
-import t_idealTour from 'img/ideal/thumbnail/t_idealTour.jpg';
-import TournamentGridList from 'components/TournamentGridList';
+import t_idealMale from 'img/ideal/idealThumbnail/t_idealMale.jpg';
+import t_idealFemale from 'img/ideal/idealThumbnail/t_idealFemale.jpg';
+import t_idealFood from 'img/ideal/idealThumbnail/t_idealFood.jpg';
+import t_idealTour from 'img/ideal/idealThumbnail/t_idealTour.jpg';
+import TournamentItemList from 'components/TournamentItemList';
 import Dialog from 'components/Dialog';
 
 const Games = [
@@ -113,7 +113,7 @@ const Home = () => {
         }
       }}
     >
-      <TournamentGridList onClick={handleSelectGame} tileData={Games} ></TournamentGridList>
+      <TournamentItemList onClick={handleSelectGame} itemData={Games} ></TournamentItemList>
       <Dialog
           title="정말로 삭제하시겠습니까?"
           confirmText="Play"

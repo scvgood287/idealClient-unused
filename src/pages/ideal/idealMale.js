@@ -1,11 +1,11 @@
 import React, { memo } from 'react';
 import IdealGames from 'components/IdealGames';
+import testMaleJson from 'shared/testMaleJson';
 
-const idealType = 'idealMale';
-
-const idealMale = ({ match }) => {
+const idealMale = (props) => {
+    const { match } = props;
     return (
-        <IdealGames match={match} type={idealType}/>
+        <IdealGames match={match} data={testMaleJson}/>
     );
 };
 
