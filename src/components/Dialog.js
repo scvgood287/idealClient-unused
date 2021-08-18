@@ -131,7 +131,7 @@ const Dialog = (props) => {
     options,
     onCancel,
     onChange,
-    visible
+    visible,
   } = props;
   const [animate, setAnimate] = useState(false);
   const [localVisible, setLocalVisible] = useState(visible);
@@ -162,8 +162,11 @@ const Dialog = (props) => {
           <ShortMarginButton color="gray" onClick={onCancel}>
             {cancelText}
           </ShortMarginButton>
-          <Link to={`${gameValue}/${roundValue}`} style={linkStyle}>
-            <ShortMarginButton color="pink" onClick={onConfirm}>
+          <Link style={linkStyle} onClick={() => onConfirm()}
+            to={{
+              pathname: `${gameValue}/${roundValue}`,
+            }}>
+            <ShortMarginButton color="pink" >
               {confirmText}
             </ShortMarginButton>
           </Link>

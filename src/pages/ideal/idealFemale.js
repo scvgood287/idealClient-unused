@@ -1,12 +1,17 @@
 import React, { memo } from 'react';
 import IdealGames from 'components/IdealGames';
-import testFemaleJson from 'shared/testFemaleJson';
+import mockJson from 'shared/mockJson';
 
-const idealFemale = (props) => {
-    const { match } = props;
+const idealType = 'idealFemale';
+const infoDataIndex = mockJson.findIndex(e => e.subject === idealType);
+const infoData = mockJson[infoDataIndex].info;
+
+const IdealFemale = (props) => {
+  const { match } = props;
+  
     return (
-        <IdealGames match={match} data={testFemaleJson}/>
+        <IdealGames match={match} info={infoData} idealType={idealType}/>
     );
 };
 
-export default memo(idealFemale);
+export default memo(IdealFemale);

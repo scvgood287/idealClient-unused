@@ -1,27 +1,28 @@
-import React, { memo } from 'react';
+import React, { memo, useEffect } from 'react';
 import { ImageListItem, ImageListItemBar } from '@material-ui/core';
 import { Link } from 'react-router-dom';
 import _ from 'lodash';
+import API from 'server/api';
 
 import ICard from 'components/ICard';
 
-const sortBy = (key, data, length) => {
-  return (data.sort((a, b) => {
+const sortBy = (key, info, length) => {
+  return (info.sort((a, b) => {
     if (key === 'firstRate') {
-      return b.firstRate - a.firstRate;
+      return b.firstTotal.firstRate - a.firstTotal.firstRate;
     } else if (key === 'winRate') {
-      return b.winRate - a.winRate;
+      return b.winTotal.winRate - a.winTotal.winRate;
     }
   })).slice(0, length);
 }
 
-const rateBy = (key, sortedData) => {
+const rateBy = (key, sortedInfo) => {
   if (key === 'firstRate') {
     return (
       <ul>
-        {sortedData.map((e, i) => (
-          <li>
-            {`${i+1}등 : ${e.value} 우승 확률 : ${e.firstRate}%`}
+        {sortedInfo.map((e, i) => (
+          <li key={e.url}>
+            {`${i+1}등 : ${`그룹 : ${e.group} / 이름 : ${e.name}`} 우승 확률 : ${e.firstTotal.firstRate}%`}
           </li>
         ))}
       </ul>
@@ -29,9 +30,9 @@ const rateBy = (key, sortedData) => {
   } else if (key === 'winRate') {
     return (
       <ul>
-        {sortedData.map((e, i) => (
-          <li>
-            {`${i+1}등 : ${e.value} 승률 : ${e.winRate}%`}
+        {sortedInfo.map((e, i) => (
+          <li key={e.url}>
+            {`${i+1}등 : ${`그룹 : ${e.group} / 이름 : ${e.name}`} 승률 : ${e.winTotal.winRate}%`}
           </li>
         ))}
       </ul>
@@ -39,33 +40,38 @@ const rateBy = (key, sortedData) => {
   }
 }
 
-const idealResult = (props) => {
+const IdealResult = (props) => {
     const { location } = props;
 
-    // 현재는 서버가 없으므로 IdealGames.js에서의 결과(A)만으로 테스트하지만
-    // 서버가 생기면 IdealGames.js에서의 결과(A) + 원본 데이터(B) 가 적용되어 합쳐진 데이터(C)를
-    // IdealGames.js에서 서버로 옮겨 업데이트 한 후,
-    // 다시 idealResult 페이지에서 업데이트한 데이터(C)를 요청해 사용할 예정.
+    const { state } = location;
+    const { winner, idealType, info, testInfo } = state;
+    const showUpBy = 20;
 
-    const state = location.state;
-    const winner = state.winner;
-    // const mockData = [
-    //   { firstRate: 26, winRate: 16, },
-    //   { firstRate: 96, winRate: 65, },
-    //   { firstRate: 60, winRate: 4, },
-    //   { firstRate: 52, winRate: 60, },
-    //   { firstRate: 62, winRate: 95, }
-    // ];
-    const sortedByFirstRate = sortBy('firstRate', _.cloneDeep(state.data), 20);
-    const sortedByWinRate = sortBy('winRate', _.cloneDeep(state.data), 20);
-    const rateByFirst = rateBy('firstRate', sortedByFirstRate);
-    const rateByWin = rateBy('winRate', sortedByWinRate);
+    const rateByFirst = rateBy('firstRate', sortBy('firstRate', _.cloneDeep(info), showUpBy));
+    const rateByWin = rateBy('winRate', sortBy('winRate', _.cloneDeep(info), showUpBy));
+
+    useEffect(() => {
+      const updateIdealInfo = async (url, type, info) => {
+        info.forEach((e) => {
+          e.firstTotal.enter++;
+        });
+        console.log(`${url}/${type}`, info);
+        try {
+          const req = await API.put(`/${type}`, info);
+          console.log(req);
+        } catch (e) {
+          console.log(e);
+        }
+      }
+
+      updateIdealInfo(idealType, testInfo);
+    }, []);
 
     return (
       <>
         <ImageListItem>
-            <ICard img={winner.url} value={winner.value} />
-            <ImageListItemBar title={winner.value} />
+            <ICard img={winner.url} value={`그룹 : ${winner.group} / 이름 : ${winner.name}`} />
+            <ImageListItemBar title={`그룹 : ${winner.group} / 이름 : ${winner.name}`} />
         </ImageListItem>
         {rateByFirst}
         {rateByWin}
@@ -82,4 +88,4 @@ const idealResult = (props) => {
     );
 }
 
-export default memo(idealResult);
+export default memo(IdealResult);

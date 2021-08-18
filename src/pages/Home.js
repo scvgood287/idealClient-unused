@@ -91,7 +91,9 @@ const Home = () => {
     });
   }
 
-  const handleConfirm = () => setDialog(false);
+  const handleConfirm = () => {
+    setDialog(false);
+  }
 
   // const handleKeyPress = useCallback((e) => {
   //   console.log(e.key);
